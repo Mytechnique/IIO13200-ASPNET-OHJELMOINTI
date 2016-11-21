@@ -2,21 +2,22 @@
     var txtfilu = Server.MapPath("~/App_Data/Oppilaat.txt");
     Array oppilaat = File.ReadAllLines(txtfilu);
 }
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Esa's 1st Razor Page</title>
+        <title>Mythe's first Razor page</title>
     </head>
     <body>
-        <h2>Tänään on @DateTime.Today.ToShortDateString()</h2>
-        <h2>Oppilaamme:</h2>
+        <h2> Tänään on @DateTime.Today.ToShortDateString()</h2>
+        <h2> Oppilaamme:</h2>
         <div>
             <p>
                 @{ 
                     int i = 1;
-                    foreach (string oppilas in oppilaat)
+                    foreach(string oppilas in oppilaat)
                     {
-                        @i <text> i </text> @oppilas <br/>
+                        @i <text>=</text> @oppilas <br />
                         i++;
                     }
                 }
