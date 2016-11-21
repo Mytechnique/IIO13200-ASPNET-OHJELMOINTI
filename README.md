@@ -15,5 +15,4 @@ Palauta ne seuraavasti:
 - Tee tehtävä. Testaa että toimii ja laatu ok.
 - Jos homma tehty oikein niin Commitoi paikalliseen Repoosi.
 -  lopuksi Pushaa takaisin GitHubin Master Repoon.
-![Alt text](/images/kuva.png "kuva")
 
