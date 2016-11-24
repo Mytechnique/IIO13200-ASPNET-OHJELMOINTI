@@ -23,6 +23,31 @@ public partial class Tehtava5 : System.Web.UI.Page
         gvAsiakkaat.DataBind();
     }
 
+    protected void GetAllCustomersFromCountry()
+    {
+        var result = ctx.asiakas
+            .Where(c => c.maa == ddlCustomerCountry.SelectedValue).ToList();
+        gvAsiakkaat.DataSource = result.ToList();
+        gvAsiakkaat.DataBind();
+    }
+
+    protected void GetAllCustomersByCountry()
+    {
+      //  var country = ctx.asiakas.Select(c => c.maa).Distinct();
+        foreach (var c in ddlCustomerCountry.Items)
+        {
+            lblMessages.Text +=
+                string.Format("<br> <h2>{0}</h2>", c.ToString());
+            var currentCountry = c.ToString();
+            foreach (var x in ctx.asiakas.Where(x => x.maa == currentCountry))
+            {
+                lblMessages.Text +=
+                    string.Format("<br> {0} {1}", x.asnimi, x.yhteyshlo);
+            }
+        }
+  
+    }
+
     protected void FillControls()
     {
         // Asetetaan DropDownListiin maat vain kerran per maa
@@ -37,10 +62,19 @@ public partial class Tehtava5 : System.Web.UI.Page
     protected void btnGetAllCustomers_Click(object sender, EventArgs e)
     {
         GetAllCustomers();
+        lblMessages.Text = "";
     }
 
     protected void btnGetAllCustomersFromCountry_Click(object sender, EventArgs e)
     {
+        GetAllCustomersFromCountry();
+        lblMessages.Text = "";
+    }
 
+    protected void btnGetAllCustomersFromAllCountries_Click(object sender, EventArgs e)
+    {
+        GetAllCustomersByCountry();
+        gvAsiakkaat.DataSource = null;
+        gvAsiakkaat.DataBind();
     }
 }

@@ -12,11 +12,15 @@
         <asp:Button ID="btnGetAllCustomers" runat="server" Text="Hae kaikki asiakkaat" OnClick="btnGetAllCustomers_Click" />
         <asp:DropDownList ID="ddlCustomerCountry" runat="server"></asp:DropDownList>
         <asp:Button ID="btnGetAllCustomersFromCountry" runat="server" Text="Hae asiakkaat valitusta maasta" OnClick="btnGetAllCustomersFromCountry_Click" />
-        <asp:Button ID="btnGetAllCustomersFromAllCountries" runat="server" Text="Hae asiakkaat maittain" />
+        <asp:Button ID="btnGetAllCustomersFromAllCountries" runat="server" Text="Hae asiakkaat maittain" OnClick="btnGetAllCustomersFromAllCountries_Click"/>
+        <asp:LinkButton ID="lbCreateNewCustomer" runat="server" Text="Luo uusi Asiakas" PostBackUrl="~/NewCustomer.aspx"></asp:LinkButton>
     </div>
-
+        <br />
     <div id="data">
         <asp:GridView ID="gvAsiakkaat" runat="server"></asp:GridView>
+    </div>
+    <div id="messages">
+        <asp:Label ID="lblMessages" runat="server"></asp:Label>
     </div>
     </form>
 </body>
