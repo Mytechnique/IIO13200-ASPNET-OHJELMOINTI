@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\H8599\Repos\IIO13200-ASPNET-OHJELMOINTI\Saitti\App_Code\AsiakkaatHaku.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\2016\School\Asp.Net\IIO13200-ASPNET-OHJELMOINTI\Saitti\App_Code\AsiakkaatHaku.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

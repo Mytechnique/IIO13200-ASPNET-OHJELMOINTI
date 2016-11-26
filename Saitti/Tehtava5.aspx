@@ -13,6 +13,8 @@
         <asp:DropDownList ID="ddlCustomerCountry" runat="server"></asp:DropDownList>
         <asp:Button ID="btnGetAllCustomersFromCountry" runat="server" Text="Hae asiakkaat valitusta maasta" OnClick="btnGetAllCustomersFromCountry_Click" />
         <asp:Button ID="btnGetAllCustomersFromAllCountries" runat="server" Text="Hae asiakkaat maittain" OnClick="btnGetAllCustomersFromAllCountries_Click"/>
+
+        <!-- Toimintoa ei toteutettu, koska ei vaadittu tehtävänannossa -->
         <asp:LinkButton ID="lbCreateNewCustomer" runat="server" Text="Luo uusi Asiakas" PostBackUrl="~/NewCustomer.aspx"></asp:LinkButton>
     </div>
         <br />
