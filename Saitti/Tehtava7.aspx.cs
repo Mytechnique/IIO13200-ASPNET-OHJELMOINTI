@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Xml;
+using MySql.Data.MySqlClient;
 using System.Configuration;
 
 public partial class Tehtava7 : System.Web.UI.Page
@@ -21,7 +22,30 @@ public partial class Tehtava7 : System.Web.UI.Page
 
     protected void btnSendSQL_Click(object sender, EventArgs e)
     {
-
+        string connection_string = ConfigurationManager.ConnectionStrings["SQL"].ConnectionString;
+        lbMessages.Text = "";
+        try
+        {
+            MySqlConnection mySqlConnection = new MySqlConnection(connection_string);
+            mySqlConnection.Open();
+            MySqlCommand mySqlCommand = mySqlConnection.CreateCommand();
+            mySqlCommand.CommandText = "INSERT INTO palaute(pvm, tekija, opintojakso, opittu, haluanoppia, hyvaa, parannettavaa, muuta) VALUES(@pvm, @tekija, @opintojakso, @opittu, @haluanoppia, @hyvaa, @parannettavaa, @muuta)";
+            mySqlCommand.Parameters.AddWithValue("@pvm", txtDate.Text);
+            mySqlCommand.Parameters.AddWithValue("@tekija", txtName.Text);
+            mySqlCommand.Parameters.AddWithValue("@opintojakso", txtCourse.Text);
+            mySqlCommand.Parameters.AddWithValue("@opittu", txtHaveLearned.Text);
+            mySqlCommand.Parameters.AddWithValue("@haluanoppia", txtWantToLearn.Text);
+            mySqlCommand.Parameters.AddWithValue("@hyvaa", txtFeedbackPositive.Text);
+            mySqlCommand.Parameters.AddWithValue("@parannettavaa", txtFeedbackNegative.Text);
+            mySqlCommand.Parameters.AddWithValue("@muuta", txtFeedbackOther.Text);
+            mySqlCommand.ExecuteNonQuery();
+            mySqlConnection.Close();
+            lbMessages.Text = "Kiitos palautteestasi!";
+        }
+        catch (Exception ex)
+        {
+            lbMessages.Text = ex.Message;
+        }
     }
 
     protected void btnSendXML_Click(object sender, EventArgs e)

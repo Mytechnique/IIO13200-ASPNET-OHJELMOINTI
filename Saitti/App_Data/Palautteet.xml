@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <palautteet>
   <palaute>
-    <pvm>27.11.2016</pvm>
+    <pvm>26.11.2016</pvm>
     <tekija>asd</tekija>
     <kurssi>asd</kurssi>
     <opittu>asd</opittu>
@@ -9,5 +9,15 @@
     <hyvaa>asd</hyvaa>
     <parannettavaa>asd</parannettavaa>
     <muuta>asd</muuta>
+  </palaute>
+  <palaute>
+    <pvm>27.11.2016</pvm>
+    <tekija>Testi Testaaja</tekija>
+    <kurssi>Testikurssi</kurssi>
+    <opittu>Hyviä hommia</opittu>
+    <haluanoppia>Lisää hyviä hommia</haluanoppia>
+    <hyvaa>Hyvät hommat</hyvaa>
+    <parannettavaa>Huonot hommat</parannettavaa>
+    <muuta>Ei lisättävää</muuta>
   </palaute>
 </palautteet>

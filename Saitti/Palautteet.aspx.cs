@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using MySql.Data.MySqlClient;
 using System.Web.UI.WebControls;
 
 public partial class Palautteet : System.Web.UI.Page
@@ -35,6 +36,24 @@ public partial class Palautteet : System.Web.UI.Page
 
     protected void btnSQLLOAD_Click(object sender, EventArgs e)
     {
-
+        string connection_string = ConfigurationManager.ConnectionStrings["SQL"].ConnectionString;
+        gvResults.DataSource = null;
+        gvResults.DataBind();
+        lblMessages.Text = "";
+        try
+        {
+            MySqlConnection mySqlConnection = new MySqlConnection(connection_string);
+            mySqlConnection.Open();
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(new MySqlCommand("SELECT * FROM palaute;", mySqlConnection));
+            DataSet dataSet = new DataSet();
+            mySqlDataAdapter.Fill(dataSet);
+            gvResults.DataSource = dataSet;
+            gvResults.DataBind();
+            mySqlConnection.Close();
+        }
+        catch (Exception ex)
+        {
+            lblMessages.Text = ex.Message;
+        }
     }
 }
