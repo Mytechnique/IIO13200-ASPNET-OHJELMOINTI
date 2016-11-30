@@ -15,7 +15,7 @@
 			<td>Pvm:</td>
 			<td><asp:TextBox ID="txtDate" runat="server" /></td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDate" ErrorMessage="Täytä kenttä." ForeColor="Red" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDate" ErrorMessage="Täytä kenttä."/>
                 <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="txtDate" Type="Date" Operator="DataTypeCheck" ErrorMessage="Päivämäärä ei ole oikeassa muodossa." ForeColor="Red" />
             </td>
 		</tr>
@@ -23,55 +23,54 @@
 			<td>Nimi:</td>
 			<td><asp:TextBox ID="txtName" runat="server" /></td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtName" ErrorMessage="Täytä kenttä." ForeColor="Red" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtName" ErrorMessage="Unohdit täyttää tämän kohdan!"/>
             </td>
 		</tr>
 		<tr>
 			<td>Opintojakson nimi: </td>
 			<td><asp:TextBox ID="txtCourse" runat="server" /></td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCourse" ErrorMessage="Täytä kenttä." ForeColor="Red" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCourse" ErrorMessage="Unohdit täyttää tämän kohdan!"/>
             </td>
 		</tr>
 		<tr>
 			<td>Olen oppinut:</td>
-			<td><asp:TextBox ID="txtHaveLearned" runat="server" TextMode="multiline" Rows="2" Columns="30" /><br /></td>
+			<td><asp:TextBox ID="txtHaveLearned" runat="server" TextMode="multiline" Rows="2" Columns="20" /><br /></td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtHaveLearned" ErrorMessage="Täytä kenttä." ForeColor="Red" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtHaveLearned" ErrorMessage="Unohdit täyttää tämän kohdan!"/>
             </td>
 		</tr>
 		<tr>
 			<td>Haluan oppia:</td>
-			<td><asp:TextBox ID="txtWantToLearn" runat="server" TextMode="multiline" Rows="2" Columns="30" /></td>
+			<td><asp:TextBox ID="txtWantToLearn" runat="server" TextMode="multiline" Rows="2" Columns="20" /></td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtWantToLearn" ErrorMessage="Täytä kenttä." ForeColor="Red" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtWantToLearn" ErrorMessage="Unohdit täyttää tämän kohdan!" />
             </td>
 		</tr>
 		<tr>
 			<td>Hyvää:</td>
-			<td><asp:TextBox ID="txtFeedbackPositive" runat="server" TextMode="multiline" Rows="2" Columns="30" /></td>
+			<td><asp:TextBox ID="txtFeedbackPositive" runat="server" TextMode="multiline" Rows="2" Columns="20" /></td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFeedbackPositive" ErrorMessage="Täytä kenttä." ForeColor="Red" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFeedbackPositive" ErrorMessage="Unohdit täyttää tämän kohdan!"/>
             </td>
 		</tr>
 		<tr>
 			<td>Parannettavaa:</td>
-			<td><asp:TextBox ID="txtFeedbackNegative" runat="server" TextMode="multiline" Rows="2" Columns="30" /></td>
+			<td><asp:TextBox ID="txtFeedbackNegative" runat="server" TextMode="multiline" Rows="2" Columns="20" /></td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFeedbackNegative" ErrorMessage="Täytä kenttä." ForeColor="Red" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFeedbackNegative" ErrorMessage="Unohdit täyttää tämän kohdan!"/>
             </td>
 		</tr>
 		<tr>
 			<td>Muuta:</td>
-			<td><asp:TextBox ID="txtFeedbackOther" runat="server" TextMode="multiline" Rows="2" Columns="30" /></td>
+			<td><asp:TextBox ID="txtFeedbackOther" runat="server" TextMode="multiline" Rows="2" Columns="20" /></td>
 		</tr>
     </table>
-
     <asp:Button ID="btnSendXML" runat="server" Text="Lähetä XML" OnClick="btnSendXML_Click" />
     <asp:Button ID="btnSendSQL" runat="server" Text="Lähetä SQL" OnClick="btnSendSQL_Click" />
     <asp:Label ID="lbMessages" runat="server" ForeColor="Green" />
     <br /><br />
-    <a href="Palautteet.aspx">Selaa palautteita</a>
+    <a href="Palautteet.aspx">Palautteet</a>
     </div>
     </form>
 </body>

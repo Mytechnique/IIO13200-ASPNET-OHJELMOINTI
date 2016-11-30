@@ -28,6 +28,7 @@ public partial class Tehtava7 : System.Web.UI.Page
         {
             MySqlConnection mySqlConnection = new MySqlConnection(connection_string);
             mySqlConnection.Open();
+            MySqlDataReader reader;
             MySqlCommand mySqlCommand = mySqlConnection.CreateCommand();
             mySqlCommand.CommandText = "INSERT INTO palaute(pvm, tekija, opintojakso, opittu, haluanoppia, hyvaa, parannettavaa, muuta) VALUES(@pvm, @tekija, @opintojakso, @opittu, @haluanoppia, @hyvaa, @parannettavaa, @muuta)";
             mySqlCommand.Parameters.AddWithValue("@pvm", txtDate.Text);
@@ -39,6 +40,7 @@ public partial class Tehtava7 : System.Web.UI.Page
             mySqlCommand.Parameters.AddWithValue("@parannettavaa", txtFeedbackNegative.Text);
             mySqlCommand.Parameters.AddWithValue("@muuta", txtFeedbackOther.Text);
             mySqlCommand.ExecuteNonQuery();
+            reader = mySqlCommand.ExecuteReader();
             mySqlConnection.Close();
             lbMessages.Text = "Kiitos palautteestasi!";
         }
